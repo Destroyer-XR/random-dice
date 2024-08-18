@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Random Dice Roll</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        #dice1 #dice2 #dice3 {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #ffffff;">Roll the Dice!</h1>
+    <img id="dice1" src="1.png" alt="Dice" width="100" height="100">
+    <img id="dice2" src="2.png" alt="Dice" width="100" height="100">
+    <img id="dice3" src="3.png" alt="Dice" width="100" height="100">
+    <br><br>
+    <button onclick="rollDice()">Roll Dice</button>
+
+    <script>
+        // ลิงก์สำหรับลูกเต๋าแต่ละหน้า
+        const links = [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "6.png",
+        ];
+
+        // ฟังก์ชันสำหรับสุ่มลูกเต๋า
+        function rollDice() {
+            for (let i=1;i<4;i++){
+                const keys = links;
+                const randomKey = keys[Math.floor(Math.random() * keys.length)];
+                var tag = "dice"+i.toString()
+                console.log(tag)
+                document.getElementById(tag).src = randomKey;
+            }
+        }
+    </script>
+</body>
+</html>
